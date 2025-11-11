@@ -1,0 +1,188 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	<bean id="insert_Account" class="com.salesforce.dataloader.process.ProcessRunner">
+		<description>Insert Account</description>
+		<property name="name" value="insert_Account"/>
+		<property name="configOverrideMap">
+			  <map>
+			  
+				<!-- Salesforce login -->
+				<entry key="sfdc.username" value="kuldeep.negi@company.co.nz.test.preprod"/>
+				<entry key="sfdc.password" value="e81e56faf49d0365482aa75ccf1a61bd2f2d546cbb368c2143c04e46dd43a4b6ec6342b96d51e7affc"/>
+				<entry key="sfdc.endpoint" value="https://test.salesforce.com"/>
+				<entry key="sfdc.oauth.enabled" value="false"/>
+				<entry key="sfdc.oauth.loginfrombrowser" value="false"/>
+				<entry key="sfdc.oauth.clientid" value=""/>
+				<entry key="sfdc.debugMessages" value="true"/>
+				<!-- Object & operation -->
+				
+				<entry key="sfdc.entity" value="Account"/>
+				<entry key="process.operation" value="upsert"/>
+				<entry key="sfdc.externalIdField" value="RecordId__c"/>
+				
+				<!-- Input CSV -->
+				<entry key="dataAccess.type" value="csvRead"/>
+				<entry key="dataAccess.readUTF8" value="true"/>
+				<entry key="dataAccess.validateCSV" value="false"/>
+				<entry key="process.useEuropeanDates" value="true"/>
+				<entry key="dataAccess.readDateFormat" value="dd/MM/yyyy"/>
+				<entry key="dataAccess.name" value="C:\\Users\\kuldeep.negi\\dataloader_win_v56.0.6\\data\\Account.csv"/>
+				<entry key="sfdc.batchSize" value="500"/>
+				<entry key="process.enableLastRunOutput" value="true"/>
+				<!-- Field mapping -->
+				<entry key="process.mappingFile" value="C:\\Users\\kuldeep.negi\\dataloader_win_v56.0.6\\mapping\\Account_Mapping.sdl"/>
+				
+				<!-- Log files-->
+				<entry key="process.outputSuccess" value="C:\\NR Report\\Reports\\Account_success.csv"/>
+				<entry key="process.outputError" value="C:\\NR Report\\Reports\\Account_error.csv"/>
+	
+			  </map>
+		</property>
+	</bean>
+	<bean id="insert_Contact" class="com.salesforce.dataloader.process.ProcessRunner">
+		<description>Insert Contact</description>
+		<property name="name" value="insert_Contact"/>
+		<property name="configOverrideMap">
+			  <map>
+			  
+				<!-- Salesforce login -->
+				<entry key="sfdc.username" value="kuldeep.negi@company.co.nz.test.preprod"/>
+				<entry key="sfdc.password" value="e81e56faf49d0365482aa75ccf1a61bd2f2d546cbb368c2143c04e46dd43a4b6ec6342b96d51e7affc"/>
+				<entry key="sfdc.endpoint" value="https://test.salesforce.com"/>
+				<entry key="sfdc.oauth.enabled" value="false"/>
+				<entry key="sfdc.oauth.loginfrombrowser" value="false"/>
+				<entry key="sfdc.oauth.clientid" value=""/>
+				<entry key="sfdc.debugMessages" value="true"/>
+				<!-- Object & operation -->
+				
+				<entry key="sfdc.entity" value="Contact"/>
+				<entry key="process.operation" value="upsert"/>
+				<entry key="sfdc.externalIdField" value="RecordId__c"/>
+				
+				<!-- Input CSV -->
+				<entry key="dataAccess.type" value="csvRead"/>
+				<entry key="process.useEuropeanDates" value="true"/>
+				<entry key="dataAccess.readDateFormat" value="dd/MM/yyyy"/>
+				<entry key="dataAccess.name" value="C:\\Users\\kuldeep.negi\\dataloader_win_v56.0.6\\data\\Contact.csv"/>
+				<entry key="sfdc.batchSize" value="200"/>
+				<!-- Field mapping -->
+				<entry key="process.mappingFile" value="C:\\Users\\kuldeep.negi\\dataloader_win_v56.0.6\\mapping\\Contact_Mapping.sdl"/>
+				
+				<!-- Log files-->
+				<entry key="process.outputSuccess" value="C:\\NR Report\\Reports\\Contact_success.csv"/>
+				<entry key="process.outputError" value="C:\\NR Report\\Reports\\Contact_error.csv"/>
+	
+			  </map>
+		</property>
+	</bean>
+	<bean id="insert_Contract" class="com.salesforce.dataloader.process.ProcessRunner">
+		<description>Insert Contract</description>
+		<property name="name" value="insert_Contract"/>
+		<property name="configOverrideMap">
+			  <map>
+			  
+				<!-- Salesforce login -->
+				<entry key="sfdc.username" value="kuldeep.negi@company.co.nz.test.preprod"/>
+				<entry key="sfdc.password" value="e81e56faf49d0365482aa75ccf1a61bd2f2d546cbb368c2143c04e46dd43a4b6ec6342b96d51e7affc"/>
+				<entry key="sfdc.endpoint" value="https://test.salesforce.com"/>
+				<entry key="sfdc.oauth.enabled" value="false"/>
+				<entry key="sfdc.oauth.loginfrombrowser" value="false"/>
+				<entry key="sfdc.oauth.clientid" value=""/>
+				<entry key="sfdc.debugMessages" value="true"/>
+				<!-- Object & operation -->
+				
+				<entry key="sfdc.entity" value="Contract"/>
+				<entry key="process.operation" value="upsert"/>
+				<entry key="sfdc.externalIdField" value="RecordId__c"/>
+				
+				<!-- Input CSV -->
+				<entry key="dataAccess.type" value="csvRead"/>
+				<entry key="process.useEuropeanDates" value="true"/>
+				<entry key="dataAccess.readDateFormat" value="dd/MM/yyyy"/>
+				<entry key="dataAccess.name" value="C:\\Users\\kuldeep.negi\\dataloader_win_v56.0.6\\data\\Contract.csv"/>
+				<entry key="sfdc.batchSize" value="200"/>
+				<!-- Field mapping -->
+				<entry key="process.mappingFile" value="C:\\Users\\kuldeep.negi\\dataloader_win_v56.0.6\\mapping\\Contract_Mapping.sdl"/>
+				
+				<!-- Log files-->
+				<entry key="process.outputSuccess" value="C:\\NR Report\\Reports\\Contract_success.csv"/>
+				<entry key="process.outputError" value="C:\\NR Report\\Reports\\Contract_error.csv"/>
+	
+			  </map>
+		</property>
+	</bean>
+	<bean id="update_Contract" class="com.salesforce.dataloader.process.ProcessRunner">
+		<description>Update Contract</description>
+		<property name="name" value="update_Contract"/>
+		<property name="configOverrideMap">
+			  <map>
+			  
+				<!-- Salesforce login -->
+				<entry key="sfdc.username" value="kuldeep.negi@company.co.nz.test.preprod"/>
+				<entry key="sfdc.password" value="e81e56faf49d0365482aa75ccf1a61bd2f2d546cbb368c2143c04e46dd43a4b6ec6342b96d51e7affc"/>
+				<entry key="sfdc.endpoint" value="https://test.salesforce.com"/>
+				<entry key="sfdc.oauth.enabled" value="false"/>
+				<entry key="sfdc.oauth.loginfrombrowser" value="false"/>
+				<entry key="sfdc.oauth.clientid" value=""/>
+				<entry key="sfdc.debugMessages" value="true"/>
+				<!-- Object & operation -->
+				
+				<entry key="sfdc.entity" value="Contract"/>
+				<entry key="process.operation" value="upsert"/>
+				<entry key="sfdc.externalIdField" value="RecordId__c"/>
+				
+				<!-- Input CSV -->
+				<entry key="dataAccess.type" value="csvRead"/>
+				<entry key="process.useEuropeanDates" value="true"/>
+				<entry key="dataAccess.readDateFormat" value="dd/MM/yyyy"/>
+				<entry key="dataAccess.name" value="C:\\Users\\kuldeep.negi\\dataloader_win_v56.0.6\\data\\Contract_Update.csv"/>
+				<entry key="sfdc.batchSize" value="200"/>
+				<!-- Field mapping -->
+				<entry key="process.mappingFile" value="C:\\Users\\kuldeep.negi\\dataloader_win_v56.0.6\\mapping\\Contract_Mapping_Update.sdl"/>
+				
+				<!-- Log files-->
+				<entry key="process.outputSuccess" value="C:\\NR Report\\Reports\\ContractUpdate_success.csv"/>
+				<entry key="process.outputError" value="C:\\NR Report\\Reports\\ContractUpdate_error.csv"/>
+	
+			  </map>
+		</property>
+	</bean>
+	<bean id="insert_Case" class="com.salesforce.dataloader.process.ProcessRunner">
+		<description>Insert Case</description>
+		<property name="name" value="insert_Case"/>
+		<property name="configOverrideMap">
+			  <map>
+			  
+				<!-- Salesforce login -->
+				<entry key="sfdc.username" value="kuldeep.negi@company.co.nz.test.preprod"/>
+				<entry key="sfdc.password" value="e81e56faf49d0365482aa75ccf1a61bd2f2d546cbb368c2143c04e46dd43a4b6ec6342b96d51e7affc"/>
+				<entry key="sfdc.endpoint" value="https://test.salesforce.com"/>
+				<entry key="sfdc.oauth.enabled" value="false"/>
+				<entry key="sfdc.oauth.loginfrombrowser" value="false"/>
+				<entry key="sfdc.oauth.clientid" value=""/>
+				<entry key="sfdc.debugMessages" value="true"/>
+				<!-- Object & operation -->
+				
+				<entry key="sfdc.entity" value="Case"/>
+				<entry key="process.operation" value="upsert"/>
+				<entry key="sfdc.externalIdField" value="RecordId__c"/>
+				
+				<!-- Input CSV -->
+				<entry key="dataAccess.type" value="csvRead"/>
+				<entry key="process.useEuropeanDates" value="true"/>
+				<entry key="dataAccess.readDateFormat" value="dd/MM/yyyy"/>
+				<entry key="dataAccess.name" value="C:\\Users\\kuldeep.negi\\dataloader_win_v56.0.6\\data\\Case.csv"/>
+				<entry key="sfdc.batchSize" value="100"/>
+				<!-- Field mapping -->
+				<entry key="process.mappingFile" value="C:\\Users\\kuldeep.negi\\dataloader_win_v56.0.6\\mapping\\Case_Mapping.sdl"/>
+				
+				<!-- Log files-->
+				<entry key="process.outputSuccess" value="C:\\NR Report\\Reports\\Case_success.csv"/>
+				<entry key="process.outputError" value="C:\\NR Report\\Reports\\Case_error.csv"/>
+	
+			  </map>
+		</property>
+	</bean>
+</beans>
